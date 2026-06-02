@@ -214,7 +214,7 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
 </head>
 <body>
 <header id="topbar">
-  <div style="display:flex;align-items:center;gap:9px;cursor:pointer" id="logo">
+  <div style="display:flex;align-items:center;gap:9px;cursor:pointer" id="logo" data-action="go-landing">
     <div style="width:30px;height:30px;background:var(--o500);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">&#x1F4AC;</div>
     <span style="font-size:16px;font-weight:800;color:var(--t1);letter-spacing:-.03em">키드링크</span>
   </div>
@@ -229,8 +229,8 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
     <h1 class="h1">선생님과 학부모가<br><em>편하게 소통하는</em> 공간</h1>
     <p class="hp">불필요한 전화 없이 ARS 자동안내와 상담 예약으로 교사의 번아웃을 줄이고, 학부모는 언제든 안심하고 소통할 수 있어요.</p>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:52px">
-      <button class="btn bp btn-lg" id="go-register">무료로 시작하기 →</button>
-      <button class="btn bg btn-lg" id="go-login">기존 계정 로그인</button>
+      <button class="btn bp btn-lg" id="go-register" data-action="go-register">무료로 시작하기 →</button>
+      <button class="btn bg btn-lg" id="go-login" data-action="go-login">기존 계정 로그인</button>
     </div>
   </div>
   <div class="fsec fade" style="animation-delay:.07s">
@@ -247,9 +247,9 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
       <h2 style="font-size:20px;font-weight:700;margin-bottom:8px">지금 바로 둘러보세요</h2>
       <p style="font-size:13px;color:var(--t2);line-height:1.7">회원가입 없이 각 역할 화면을 자유롭게 체험할 수 있습니다.</p>
       <div class="dbg">
-        <button class="db" id="demo-parent"><div style="font-weight:700;font-size:14px;margin-bottom:3px">&#x1F46A; 학부모로 체험</div><div style="font-size:11px;color:var(--t3)">FAQ · 상담 신청 · 내 요청</div></button>
-        <button class="db" id="demo-teacher"><div style="font-weight:700;font-size:14px;margin-bottom:3px">&#x1F469;&#x200D;&#x1F3EB; 교사로 체험</div><div style="font-size:11px;color:var(--t3)">민원 관리 · 답변 · 로그</div></button>
-        <button class="db" id="demo-admin"><div style="font-weight:700;font-size:14px;margin-bottom:3px">&#x1F3EB; 원장으로 체험</div><div style="font-size:11px;color:var(--t3)">통합 대시보드 · FAQ 편집</div></button>
+        <button class="db" id="demo-parent" data-demo="parent"><div style="font-weight:700;font-size:14px;margin-bottom:3px">&#x1F46A; 학부모로 체험</div><div style="font-size:11px;color:var(--t3)">FAQ · 상담 신청 · 내 요청</div></button>
+        <button class="db" id="demo-teacher" data-demo="teacher"><div style="font-weight:700;font-size:14px;margin-bottom:3px">&#x1F469;&#x200D;&#x1F3EB; 교사로 체험</div><div style="font-size:11px;color:var(--t3)">민원 관리 · 답변 · 로그</div></button>
+        <button class="db" id="demo-admin" data-demo="admin"><div style="font-weight:700;font-size:14px;margin-bottom:3px">&#x1F3EB; 원장으로 체험</div><div style="font-size:11px;color:var(--t3)">통합 대시보드 · FAQ 편집</div></button>
       </div>
     </div>
   </div>
@@ -269,13 +269,13 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
         <div><div class="lbl" style="margin-bottom:5px">이메일</div><input class="inp" type="email" id="a-email" placeholder="이메일 주소"/></div>
         <div><div class="lbl" style="margin-bottom:5px">비밀번호</div><input class="inp" type="password" id="a-pw" placeholder="비밀번호 (6자 이상)"/></div>
         <div id="aerr" class="hidden" style="background:var(--redbg);color:var(--red);border-radius:var(--rsm);padding:10px 14px;font-size:13px"></div>
-        <button class="btn bp btn-w btn-lg" id="a-btn" style="margin-top:4px">로그인</button>
+        <button class="btn bp btn-w btn-lg" id="a-btn" data-action="auth-submit" style="margin-top:4px">로그인</button>
         <div style="text-align:center;font-size:13px;color:var(--t2)" id="a-switch"></div>
         <div class="asep">또는 로그인 없이 체험</div>
         <div style="display:flex;gap:7px">
-          <button class="btn bs btn-sm" style="flex:1;font-size:12px" id="auth-demo-parent">학부모</button>
-          <button class="btn bs btn-sm" style="flex:1;font-size:12px" id="auth-demo-teacher">교사</button>
-          <button class="btn bs btn-sm" style="flex:1;font-size:12px" id="auth-demo-admin">원장</button>
+          <button class="btn bs btn-sm" style="flex:1;font-size:12px" id="auth-demo-parent" data-demo="parent">학부모</button>
+          <button class="btn bs btn-sm" style="flex:1;font-size:12px" id="auth-demo-teacher" data-demo="teacher">교사</button>
+          <button class="btn bs btn-sm" style="flex:1;font-size:12px" id="auth-demo-admin" data-demo="admin">원장</button>
         </div>
       </div>
     </div>
@@ -307,7 +307,7 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
         <div id="p-child-w" class="hidden"><div class="lbl" style="margin-bottom:5px">자녀 이름</div><input class="inp" id="p-child" placeholder="원아 이름 입력"/></div>
         <div><div class="lbl" style="margin-bottom:5px">연락처</div><input class="inp" type="tel" id="p-phone" placeholder="010-0000-0000"/></div>
         <div id="perr" class="hidden" style="background:var(--redbg);color:var(--red);border-radius:var(--rsm);padding:10px 14px;font-size:13px"></div>
-        <button class="btn bp btn-w btn-lg" id="p-submit" style="margin-top:4px">저장하고 시작하기</button>
+        <button class="btn bp btn-w btn-lg" id="p-submit" data-action="profile-submit" style="margin-top:4px">저장하고 시작하기</button>
       </div>
     </div>
   </div>
@@ -322,13 +322,12 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
         <h2 style="font-size:18px;font-weight:700;margin-top:2px" id="pn-name"></h2>
         <div style="font-size:13px;color:var(--t2);margin-top:1px" id="pn-child"></div>
       </div>
-      <button class="btn bg btn-sm" id="p-logout">나가기</button>
+      <button class="btn bg btn-sm" id="p-logout" data-action="logout">나가기</button>
     </div>
     <div id="p-dbanner" class="dbanner hidden">&#x1F9EA; 데모 모드</div>
     <div class="tabs" id="ptabs" style="margin-bottom:20px">
       <button class="tab on" data-t="ph-home">홈</button>
       <button class="tab" data-t="ph-ars">자주 묻는 질문</button>
-      <button class="tab" data-t="ph-absence">결석 신고</button>
       <button class="tab" data-t="ph-counsel">상담 신청</button>
       <button class="tab" data-t="ph-hist">내 요청 <span id="p-cnt"></span></button>
     </div>
@@ -339,16 +338,11 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
         <p style="font-size:13px;color:var(--t2);line-height:1.7">간단한 사항은 <strong style="color:var(--o500)">자주 묻는 질문</strong>을, 선생님과 직접 상담이 필요하면 <strong style="color:var(--o500)">상담 신청</strong>을 이용하세요.</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <button class="card" id="go-ars" style="padding:20px;text-align:left;cursor:pointer;border:none;font-family:inherit;background:var(--wh)">
+        <button class="card" id="go-ars" data-action="go-ars" style="padding:20px;text-align:left;cursor:pointer;border:none;font-family:inherit;background:var(--wh)">
           <div style="font-size:24px;margin-bottom:8px">&#x1F4DE;</div><div style="font-weight:700;font-size:14px">자주 묻는 질문</div><div style="font-size:12px;color:var(--t3);margin-top:2px">통학·투약·준비물 등</div>
         </button>
-        <button class="card" id="go-absence" style="padding:20px;text-align:left;cursor:pointer;border:none;font-family:inherit;background:var(--wh)">
-          <div style="font-size:24px;margin-bottom:8px">&#x1F3E0;</div><div style="font-weight:700;font-size:14px">결석 신고</div><div style="font-size:12px;color:var(--t3);margin-top:2px">당일 오전 9시 이전</div>
-        </button>
-      </div>
-      <div style="margin-top:10px">
-        <button class="card" id="go-counsel" style="padding:20px;text-align:left;cursor:pointer;border:none;font-family:inherit;background:var(--wh);width:100%">
-          <div style="font-size:24px;margin-bottom:8px">&#x1F4AC;</div><div style="font-weight:700;font-size:14px">상담 신청</div><div style="font-size:12px;color:var(--t3);margin-top:2px">안전·발달·관계 등 선생님과 직접 상담</div>
+        <button class="card" id="go-counsel" data-action="go-counsel" style="padding:20px;text-align:left;cursor:pointer;border:none;font-family:inherit;background:var(--wh)">
+          <div style="font-size:24px;margin-bottom:8px">&#x1F4AC;</div><div style="font-weight:700;font-size:14px">상담 신청</div><div style="font-size:12px;color:var(--t3);margin-top:2px">안전·발달·관계 등</div>
         </button>
       </div>
     </div>
@@ -363,40 +357,6 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
       </div>
       <div id="faq-list"></div>
     </div>
-    <div id="ph-absence" class="hidden fade">
-      <div class="card" style="padding:16px;margin-bottom:14px">
-        <h3 style="font-weight:700;font-size:15px;margin-bottom:4px">&#x1F3E0; 결석 신고</h3>
-        <p style="font-size:13px;color:var(--t2)">당일 결석은 오전 9시 이전에 신고해 주세요. 전염성 질환은 등원 시 의사 소견서가 필요합니다.</p>
-      </div>
-      <!-- step bar -->
-      <div class="step-bar" id="abs-stepbar">
-        <div class="step-item on" data-step="0">① 결석 사유</div>
-        <div class="step-item" data-step="1">② 세부 정보</div>
-        <div class="step-item" data-step="2">③ 확인 전송</div>
-      </div>
-      <!-- step 0: 사유 선택 -->
-      <div id="abs-s0" class="abs-step">
-        <div class="lbl" style="margin-bottom:8px">결석 사유 선택 *</div>
-        <div id="abs-reason-list" style="display:flex;flex-direction:column;gap:8px"></div>
-      </div>
-      <!-- step 1: 세부 정보 -->
-      <div id="abs-s1" class="abs-step hidden">
-        <div id="abs-detail-area"></div>
-      </div>
-      <!-- step 2: 확인 -->
-      <div id="abs-s2" class="abs-step hidden">
-        <div class="card" style="padding:16px;margin-bottom:12px" id="abs-summary"></div>
-        <div class="abs-card info">
-          <div style="font-size:13px;font-weight:700;color:var(--blue);margin-bottom:4px">&#x2139;&#xFE0F; 안내</div>
-          <div id="abs-guide-msg" style="font-size:13px;color:var(--t2);line-height:1.7"></div>
-        </div>
-        <button class="btn bp btn-w btn-lg" id="abs-submit" style="margin-top:14px">결석 신고 전송</button>
-      </div>
-      <div style="display:flex;gap:8px;margin-top:16px">
-        <button class="btn bg btn-sm hidden" id="abs-prev">← 이전</button>
-        <button class="btn bp btn-sm" id="abs-next" style="margin-left:auto">다음 →</button>
-      </div>
-    </div>
     <div id="ph-counsel" class="hidden fade">
       <div class="card" style="padding:16px;margin-bottom:14px">
         <h3 style="font-weight:700;font-size:15px;margin-bottom:4px">&#x1F4AC; 상담 신청</h3>
@@ -408,11 +368,11 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
         <div>
           <div class="lbl" style="margin-bottom:8px">상담 분야</div>
           <div class="pills" id="cc-cat">
-            <button class="pill on" data-v="safety">&#x1F6E1; 안전</button>
-            <button class="pill" data-v="health">&#x1F48A; 건강/투약</button>
-            <button class="pill" data-v="development">&#x1F331; 성장발달</button>
-            <button class="pill" data-v="relations">&#x1F91D; 교우관계</button>
-            <button class="pill" data-v="other">&#x1F4AC; 기타</button>
+            <button class="pill on" data-v="safety" data-gid="cc-cat">&#x1F6E1; 안전</button>
+            <button class="pill" data-v="health" data-gid="cc-cat">&#x1F48A; 건강/투약</button>
+            <button class="pill" data-v="development" data-gid="cc-cat">&#x1F331; 성장발달</button>
+            <button class="pill" data-v="relations" data-gid="cc-cat">&#x1F91D; 교우관계</button>
+            <button class="pill" data-v="other" data-gid="cc-cat">&#x1F4AC; 기타</button>
           </div>
         </div>
 
@@ -441,9 +401,9 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
           <div>
             <div class="lbl" style="margin-bottom:7px">희망 연락 방법</div>
             <div class="pill-row" id="cc-type">
-              <button class="pill on" data-v="call">전화</button>
-              <button class="pill" data-v="text">문자</button>
-              <button class="pill" data-v="face">대면</button>
+              <button class="pill on" data-v="call" data-gid="cc-type">전화</button>
+              <button class="pill" data-v="text" data-gid="cc-type">문자</button>
+              <button class="pill" data-v="face" data-gid="cc-type">대면</button>
             </div>
           </div>
           <div>
@@ -471,8 +431,8 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
         <div>
           <div class="lbl" style="margin-bottom:7px">긴급 여부</div>
           <div class="pill-row" id="cc-urg">
-            <button class="pill on" data-v="normal">일반 상담</button>
-            <button class="pill" data-v="emergency" style="color:var(--red)">&#x1F6A8; 긴급</button>
+            <button class="pill on" data-v="normal" data-gid="cc-urg">일반 상담</button>
+            <button class="pill" data-v="emergency" data-gid="cc-urg" style="color:var(--red)">&#x1F6A8; 긴급</button>
           </div>
           <div id="urg-warn" class="urg-warn hidden" style="margin-top:10px">
             <h4>&#x26A0;&#xFE0F; 긴급 상담 이용 안내</h4>
@@ -491,7 +451,7 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
         </div>
 
         <div id="cc-err" class="hidden" style="background:var(--redbg);color:var(--red);border-radius:var(--rsm);padding:10px 14px;font-size:13px"></div>
-        <button class="btn bp btn-w btn-lg" id="counsel-submit">상담 신청 완료</button>
+        <button class="btn bp btn-w btn-lg" id="counsel-submit" data-action="counsel-submit">상담 신청 완료</button>
       </div>
     </div>
     <div id="ph-hist" class="hidden fade"><div id="p-hist-list"></div></div>
@@ -504,22 +464,45 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
     <div class="ph">
       <div><div class="lbl">교사 대시보드</div><h2 style="font-size:18px;font-weight:700;margin-top:2px" id="tn-name"></h2></div>
       <div style="display:flex;gap:7px">
-        <button class="btn bg btn-sm" id="t-settings-btn">&#x2699;&#xFE0F; 설정</button>
-        <button class="btn bg btn-sm" id="t-logout">나가기</button>
+        <button class="btn bg btn-sm" id="t-settings-btn" data-action="toggle-settings">&#x2699;&#xFE0F; 설정</button>
+        <button class="btn bg btn-sm" id="t-logout" data-action="logout">나가기</button>
       </div>
     </div>
     <div id="t-dbanner" class="dbanner hidden">&#x1F9EA; 데모 모드</div>
     <div class="sg" style="grid-template-columns:repeat(3,1fr);margin-bottom:18px" id="t-stats"></div>
     <div class="spanel hidden" id="t-settings">
-      <h3 style="font-weight:700;font-size:14px;margin-bottom:14px">&#x2699;&#xFE0F; 알림 설정</h3>
-      <div class="trow"><label for="tn-on">알림 활성화</label><label class="tog"><input type="checkbox" id="tn-on" checked><span class="tslide"></span></label></div>
-      <div class="trow"><label for="tn-wh">근무시간만 수신</label><label class="tog"><input type="checkbox" id="tn-wh" checked><span class="tslide"></span></label></div>
-      <div style="display:flex;align-items:center;gap:8px;padding:6px 0">
-        <input class="inp" type="time" id="tn-st" value="09:00" style="width:108px"/>
-        <span style="color:var(--t3);font-size:13px">~</span>
-        <input class="inp" type="time" id="tn-et" value="18:00" style="width:108px"/>
+      <!-- 설정 탭 -->
+      <div class="tabs" id="ts-tabs" style="margin-bottom:16px">
+        <button class="tab on" data-ts="ts-notify">&#x1F514; 알림 설정</button>
+        <button class="tab" data-ts="ts-questions">&#x270F;&#xFE0F; 상담 질문 편집</button>
       </div>
-      <button class="btn bp btn-sm" id="t-settings-save" style="margin-top:12px">설정 저장</button>
+      <!-- 알림 설정 -->
+      <div id="ts-notify">
+        <div class="trow"><label for="tn-on">알림 활성화</label><label class="tog"><input type="checkbox" id="tn-on" checked><span class="tslide"></span></label></div>
+        <div class="trow"><label for="tn-wh">근무시간만 수신</label><label class="tog"><input type="checkbox" id="tn-wh" checked><span class="tslide"></span></label></div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 0">
+          <input class="inp" type="time" id="tn-st" value="09:00" style="width:108px"/>
+          <span style="color:var(--t3);font-size:13px">~</span>
+          <input class="inp" type="time" id="tn-et" value="18:00" style="width:108px"/>
+        </div>
+        <button class="btn bp btn-sm" id="t-settings-save" data-action="save-settings" style="margin-top:12px">설정 저장</button>
+      </div>
+      <!-- 질문 편집 -->
+      <div id="ts-questions" class="hidden">
+        <p style="font-size:12px;color:var(--t3);margin-bottom:12px">학부모 상담 신청 시 표시되는 질문을 수정하거나 새 항목을 추가할 수 있습니다.</p>
+        <div id="tq-cat-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
+          <button class="pill on" data-tq-cat="safety" style="font-size:12px">&#x1F6E1; 안전</button>
+          <button class="pill" data-tq-cat="health" style="font-size:12px">&#x1F48A; 건강</button>
+          <button class="pill" data-tq-cat="development" style="font-size:12px">&#x1F331; 발달</button>
+          <button class="pill" data-tq-cat="relations" style="font-size:12px">&#x1F91D; 관계</button>
+          <button class="pill" data-tq-cat="other" style="font-size:12px">&#x1F4AC; 기타</button>
+        </div>
+        <div id="tq-editor"></div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn bp btn-sm" data-action="tq-save">&#x1F4BE; 저장</button>
+          <button class="btn bs btn-sm" data-action="tq-add-item">&#x2795; 항목 추가</button>
+        </div>
+      </div>
     </div>
     <div class="search-wrap" style="margin-bottom:12px">
       <span class="search-icon">&#x1F50D;</span>
@@ -539,7 +522,7 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
   <div class="page-w">
     <div class="ph">
       <div><div class="lbl">원장실 통합 대시보드</div><h2 style="font-size:18px;font-weight:700;margin-top:2px" id="an-name"></h2></div>
-      <button class="btn bg btn-sm" id="a-logout">나가기</button>
+      <button class="btn bg btn-sm" id="a-logout" data-action="logout">나가기</button>
     </div>
     <div id="a-dbanner" class="dbanner hidden">&#x1F9EA; 데모 모드</div>
     <div class="sg" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px" id="a-stats"></div>
@@ -579,9 +562,41 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
       </div>
       <div id="faq-editor"></div>
       <div style="display:flex;gap:8px;margin-top:16px">
-        <button class="btn bp" id="faq-save">&#x1F4BE; 저장</button>
-        <button class="btn bs" id="faq-add">&#x2795; 카테고리 추가</button>
+        <button class="btn bp" id="faq-save" data-action="faq-save">&#x1F4BE; 저장</button>
+        <button class="btn bs" id="faq-add" data-action="faq-add">&#x2795; 카테고리 추가</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- AI 확인 모달 -->
+<div id="m-confirm" class="overlay hidden">
+  <div class="modal fade" style="max-width:540px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+      <span style="font-size:22px">&#x2728;</span>
+      <h3 style="font-weight:700;font-size:16px">AI가 정리한 상담 내용 확인</h3>
+    </div>
+    <p style="font-size:13px;color:var(--t3);margin-bottom:14px">아래 내용으로 선생님께 전달됩니다. 수정이 필요하면 직접 편집할 수 있습니다.</p>
+    <div id="mc-loading" style="text-align:center;padding:24px;color:var(--o500);font-weight:600">
+      <div class="ai-loading">&#x2728; AI가 내용을 정리하고 있습니다...</div>
+    </div>
+    <textarea class="inp hidden" id="mc-text" style="min-height:160px;font-size:14px;line-height:1.7"></textarea>
+    <div id="mc-meta" class="hidden" style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;gap:8px">
+        <div style="flex:1">
+          <div class="lbl" style="margin-bottom:5px">희망 연락 방법</div>
+          <div id="mc-contact" style="font-size:13px;font-weight:600;color:var(--t1)"></div>
+        </div>
+        <div style="flex:1">
+          <div class="lbl" style="margin-bottom:5px">희망 일시</div>
+          <div id="mc-time-disp" style="font-size:13px;font-weight:600;color:var(--t1)"></div>
+        </div>
+      </div>
+      <div id="mc-intent-disp" style="display:flex;flex-wrap:wrap;gap:5px"></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:18px">
+      <button class="btn bg" style="flex:1" data-action="mc-cancel">돌아가서 수정</button>
+      <button class="btn bp" style="flex:2" data-action="mc-send">&#x1F4E8; 이대로 전송하기</button>
     </div>
   </div>
 </div>
@@ -594,9 +609,9 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
     <div style="display:flex;flex-direction:column;gap:13px">
       <div><div class="lbl" style="margin-bottom:7px">처리 상태</div>
         <div class="pill-row" id="m-status">
-          <button class="pill on" data-v="scheduled">예약 확정</button>
-          <button class="pill" data-v="resolved">처리 완료</button>
-          <button class="pill" data-v="cancelled">취소</button>
+          <button class="pill on" data-v="scheduled" data-gid="m-status">예약 확정</button>
+          <button class="pill" data-v="resolved" data-gid="m-status">처리 완료</button>
+          <button class="pill" data-v="cancelled" data-gid="m-status">취소</button>
         </div>
       </div>
       <div><div class="lbl" style="margin-bottom:5px">예약 일시</div><input class="inp" type="datetime-local" id="m-sched"/></div>
@@ -613,8 +628,8 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px">
           <div class="lbl">답변 내용</div>
           <div style="display:flex;gap:6px">
-            <button class="btn bs btn-sm" id="tmpl-btn" style="font-size:11px;padding:5px 10px">&#x1F4CB; 템플릿</button>
-            <button class="btn bs btn-sm" id="ai-btn" style="font-size:11px;padding:5px 10px">&#x2728; AI 초안</button>
+            <button class="btn bs btn-sm" id="tmpl-btn" data-action="tmpl-toggle" style="font-size:11px;padding:5px 10px">&#x1F4CB; 템플릿</button>
+            <button class="btn bs btn-sm" id="ai-btn" data-action="ai-draft" style="font-size:11px;padding:5px 10px">&#x2728; AI 초안</button>
           </div>
         </div>
         <div id="tmpl-panel" class="hidden" style="background:var(--w50);border:1px solid var(--bd);border-radius:var(--rmd);padding:12px;margin-bottom:8px">
@@ -622,21 +637,20 @@ input[type=datetime-local].inp::-webkit-calendar-picker-indicator{cursor:pointer
           <div class="tmpl-list" id="tmpl-list"></div>
           <div style="display:flex;gap:6px;margin-top:8px">
             <input class="inp" id="tmpl-new" placeholder="새 템플릿 입력" style="flex:1;font-size:13px"/>
-            <button class="btn bs btn-sm" id="tmpl-add-btn">추가</button>
+            <button class="btn bs btn-sm" id="tmpl-add-btn" data-action="tmpl-add">추가</button>
           </div>
         </div>
         <textarea class="inp" id="m-resp" placeholder="답변을 작성해 주세요." style="min-height:100px"></textarea>
       </div>
       <div style="display:flex;gap:8px;margin-top:4px">
-        <button class="btn bg" style="flex:1" id="modal-cancel">취소</button>
-        <button class="btn bp" style="flex:2" id="modal-save">저장</button>
+        <button class="btn bg" style="flex:1" id="modal-cancel" data-action="modal-cancel">취소</button>
+        <button class="btn bp" style="flex:2" id="modal-save" data-action="modal-save">저장</button>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-(function(){
 /* ── DATA ── */
 var CATS={safety:'안전',health:'건강/투약',development:'성장발달',relations:'교우관계',other:'기타'};
 var CATS_ICON={safety:'&#x1F6E1; 안전',health:'&#x1F48A; 건강/투약',development:'&#x1F331; 성장발달',relations:'&#x1F91D; 교우관계',other:'&#x1F4AC; 기타'};
@@ -790,13 +804,11 @@ function initParent(){
       updateGqPreview(getActivePill('cc-cat'));
     });
   }
-  renderChecklist('safety');
   renderGuidedQuestions('safety');
   document.querySelectorAll('#cc-cat .pill').forEach(function(b){
     b.addEventListener('click',function(){
       document.querySelectorAll('#cc-cat .pill').forEach(function(x){x.classList.remove('on');});
       b.classList.add('on');
-      renderChecklist(b.dataset.v);
       renderGuidedQuestions(b.dataset.v);
     });
   });
@@ -860,84 +872,222 @@ function ptab(btn){
   if(btn.dataset.t==='ph-counsel')renderChecklist(getActivePill('cc-cat')||'safety');
 }
 function ptabByKey(key){var btn=document.querySelector('#ptabs [data-t="'+key+'"]');if(btn)ptab(btn);}
-/* ── 카테고리별 구조화 질문 ── */
-var GQ={
-  safety:[
-    {q:'어떤 사고가 있었나요?',p:'예: 미끄럼틀에서 넘어짐, 친구와 부딪힘',key:'type'},
-    {q:'언제 발견하셨나요?',p:'예: 오늘 하원 후 오후 4시',key:'when'},
-    {q:'다친 부위와 상처 상태는?',p:'예: 오른쪽 무릎, 3cm 찰과상',key:'injury'},
-    {q:'현재 아이 상태는?',p:'예: 많이 울고 있음 / 일상생활 가능',key:'status'},
-    {q:'병원 방문 예정이 있나요?',p:'예: 오늘 저녁 방문 예정 / 경과 지켜볼 것',key:'hospital'},
-  ],
-  health:[
-    {q:'어떤 증상이 있나요?',p:'예: 발열 38.5도, 구토 2회',key:'symptom'},
-    {q:'언제부터 시작됐나요?',p:'예: 어제 저녁부터',key:'since'},
-    {q:'투약이 필요한가요?',p:'예: 처방받은 항생제 점심 식후 1포 / 없음',key:'medicine'},
-    {q:'병원 진단이 있다면?',p:'예: 수족구 진단 / 아직 병원 미방문',key:'diagnosis'},
-    {q:'등원 예정일은?',p:'예: 모레 6월 5일 / 미정',key:'return'},
-  ],
-  development:[
-    {q:'어떤 부분이 걱정되시나요?',p:'예: 또래보다 말이 늦음, 숫자 개념이 부족',key:'concern'},
-    {q:'언제부터 걱정이 시작됐나요?',p:'예: 3개월 전부터',key:'since'},
-    {q:'가정에서 관찰한 구체적인 모습은?',p:'예: 두 단어 이상 연결이 어려움',key:'home'},
-    {q:'전문 기관 상담을 받은 적 있나요?',p:'예: 없음 / 언어치료 중',key:'expert'},
-  ],
-  relations:[
-    {q:'어떤 상황이 있었나요?',p:'예: 특정 친구에게 자주 맞는다고 함',key:'situation'},
-    {q:'언제부터 이런 이야기를 했나요?',p:'예: 이번 주부터',key:'since'},
-    {q:'아이가 직접 말한 내용이 있나요?',p:'예: "OO이가 내 장난감 빼앗아" 라고 함',key:'child_said'},
-    {q:'등원 거부나 특이 행동이 있나요?',p:'예: 아침마다 배 아프다고 함 / 없음',key:'behavior'},
-  ],
-  other:[
-    {q:'어떤 내용을 전달하고 싶으신가요?',p:'예: 이번 주 하원 시간 변경 요청',key:'topic'},
-    {q:'관련된 날짜나 시간이 있나요?',p:'예: 6월 5일 수요일 오후 3시',key:'datetime'},
-    {q:'추가로 전달할 사항은?',p:'예: 대리인 이름: 홍길동 (외조모)',key:'extra'},
-  ],
+/* ── 체크리스트 항목별 맞춤 질문 ── */
+/* 구조: 분야 선택 → 체크리스트(어떤 일인지) → 체크된 항목마다 질문 생성 */
+var CQ = {
+  /* 안전 */
+  safety: {
+    items: [
+      { id:'fall',   label:'낙상·부딪힘 사고',
+        qs:['언제 어디서 발생했나요?','다친 신체 부위와 상처 상태는?','지금 아이 상태는 어떤가요?','병원 방문 예정이 있나요?'] },
+      { id:'facility', label:'시설물 위험 발견',
+        qs:['어떤 시설, 어느 위치인가요?','아이가 다치지는 않았나요?','언제 발견하셨나요?'] },
+      { id:'vehicle', label:'통학 차량 관련',
+        qs:['어떤 상황이었나요?','발생 날짜와 시간은?','아이가 직접 말한 내용이 있나요?'] },
+      { id:'allergy', label:'급식·식품 알레르기 반응',
+        qs:['어떤 증상이 나타났나요?','어떤 식품이 원인으로 의심되나요?','현재 아이 상태는?','병원 방문 예정인가요?'] },
+      { id:'other_safety', label:'기타 안전 우려',
+        qs:['어떤 상황인가요?','언제 발생 또는 발견했나요?'] },
+    ]
+  },
+  /* 건강/투약 */
+  health: {
+    items: [
+      { id:'fever',  label:'발열 (38도 이상)',
+        qs:['현재 체온은 몇 도인가요?','언제부터 열이 시작됐나요?','다른 증상도 있나요? (구토, 기침 등)','병원 진료를 받으셨나요?'] },
+      { id:'vomit',  label:'구토·설사·복통',
+        qs:['언제부터 증상이 있었나요?','식사는 가능한 상태인가요?','병원 진료를 받으셨나요?'] },
+      { id:'meds',   label:'투약 의뢰',
+        qs:['약 이름은 무엇인가요?','1회 복용량과 복용 횟수는?','복용 시간은? (식전/식후/특정 시간)','처방받은 병원이 있나요?'] },
+      { id:'contagious', label:'전염성 질환 (수족구, 독감 등)',
+        qs:['진단받은 병명은?','진단 날짜는 언제인가요?','등원 예정일은?','소견서 준비가 되셨나요?'] },
+      { id:'chronic', label:'만성질환·특이 건강 사항',
+        qs:['어떤 건강 사항인가요?','교사가 주의해야 할 내용은?','비상시 연락할 병원이나 방법이 있나요?'] },
+    ]
+  },
+  /* 성장발달 */
+  development: {
+    items: [
+      { id:'lang',   label:'언어·말하기 발달',
+        qs:['어떤 점이 걱정되시나요?','또래와 비교해 어떤 차이가 느껴지나요?','언제부터 걱정이 시작됐나요?','가정에서 관찰한 구체적 모습은?'] },
+      { id:'cognition', label:'인지·학습 능력',
+        qs:['어떤 부분이 걱정되시나요?','가정에서 어떤 모습을 보이나요?','이전에 전문 기관 상담을 받은 적 있나요?'] },
+      { id:'social',  label:'사회성·또래 상호작용',
+        qs:['어떤 상황이 걱정되나요?','친구 관계에서 어떤 모습을 보이나요?','가정에서는 어떤가요?'] },
+      { id:'emotion', label:'정서·기분 조절',
+        qs:['어떤 상황에서 어려움을 보이나요?','최근 언제부터 이런 모습이 시작됐나요?','가정에서 어떻게 대응하고 계신가요?'] },
+      { id:'motor',   label:'신체·운동 발달',
+        qs:['어떤 점이 걱정되시나요?','또래와 비교해 어떤 차이가 있나요?'] },
+    ]
+  },
+  /* 교우관계 */
+  relations: {
+    items: [
+      { id:'conflict', label:'또래 갈등·다툼',
+        qs:['어떤 상황이 있었나요?','언제부터 이런 일이 있었나요?','아이가 직접 말한 내용이 있나요?','상대 아이 이름을 알고 계신가요? (선택)'] },
+      { id:'bullying', label:'따돌림·배제 우려',
+        qs:['어떤 상황을 보셨거나 들으셨나요?','언제부터 신경이 쓰이셨나요?','아이가 등원을 거부하거나 특이한 반응을 보이나요?'] },
+      { id:'teacher_rel', label:'교사와의 관계 어려움',
+        qs:['어떤 점이 걱정되시나요?','아이가 구체적으로 어떤 이야기를 했나요?','언제부터 이런 반응이 있었나요?'] },
+      { id:'shy',      label:'친구 사귀기 어려움',
+        qs:['어떤 모습을 보이나요?','가정에서도 비슷한 모습인가요?','언제부터 걱정이 시작됐나요?'] },
+    ]
+  },
+  /* 기타 */
+  other: {
+    items: [
+      { id:'schedule', label:'등하원 일정 변경',
+        qs:['변경 날짜와 시간은?','변경 사유는?','데리러 오는 분의 성함과 관계는?'] },
+      { id:'family',   label:'가정 내 특이사항 공유',
+        qs:['어떤 사항을 공유하고 싶으신가요?','교사가 특별히 주의해야 할 점이 있나요?'] },
+      { id:'materials', label:'준비물·행사 문의',
+        qs:['어떤 행사 또는 준비물에 대한 문의인가요?','날짜는 언제인가요?'] },
+      { id:'general',  label:'기타 일반 문의',
+        qs:['어떤 내용을 전달하고 싶으신가요?','관련 날짜나 시간이 있나요?'] },
+    ]
+  }
 };
-var _gqVals={};
+
+var _checkedItems = {};   // { itemId: true }
+var _itemAnswers  = {};   // { itemId_qIdx: answer }
+
 function renderGuidedQuestions(cat){
-  var section=document.getElementById('gq-section');
-  if(!section)return;
-  var qs=GQ[cat]||GQ.other;
-  _gqVals={};
-  section.innerHTML='<div class="gq-header"><span class="gq-badge">&#x2728; 맞춤 질문</span><span style="font-size:12px;color:var(--t3)">단답으로 채워주세요 — 자동으로 정리됩니다</span></div>'
-    +qs.map(function(q,i){
-      return '<div class="gq-item" id="gqi-'+i+'">'
-        +'<div class="gq-qlabel">Q'+(i+1)+'. '+q.q+'</div>'
-        +'<input class="gq-input" data-key="'+q.key+'" data-idx="'+i+'" placeholder="'+q.p+'"/>'
-        +'</div>';
-    }).join('');
-  section.querySelectorAll('.gq-input').forEach(function(inp){
-    inp.addEventListener('input',function(){
-      _gqVals[inp.dataset.key]=inp.value.trim();
-      inp.closest('.gq-item').classList.toggle('filled', inp.value.trim().length>0);
+  var section = document.getElementById('gq-section');
+  if(!section) return;
+  _checkedItems = {};
+  _itemAnswers  = {};
+  var data = CQ[cat] || CQ.other;
+
+  section.innerHTML =
+    '<div class="gq-header" style="margin-bottom:10px">'
+    + '<span class="gq-badge">&#x2713; 어떤 일인가요?</span>'
+    + '<span style="font-size:12px;color:var(--t3)">해당하는 항목을 모두 선택하세요</span>'
+    + '</div>'
+    + '<div id="gq-checklist" style="display:flex;flex-direction:column;gap:7px">'
+    + data.items.map(function(item){
+        return '<label class="chk-item" data-item-id="'+item.id+'">'
+          + '<input type="checkbox" data-item-cb="'+item.id+'"/>'
+          + '<div style="font-size:14px;font-weight:600">'+item.label+'</div>'
+          + '</label>';
+      }).join('')
+    + '</div>'
+    + '<div id="gq-questions" style="margin-top:12px;display:flex;flex-direction:column;gap:12px"></div>';
+
+  // Wire checkboxes
+  section.querySelectorAll('[data-item-cb]').forEach(function(cb){
+    cb.addEventListener('change', function(){
+      var id = cb.getAttribute('data-item-cb');
+      cb.closest('.chk-item').classList.toggle('on', cb.checked);
+      if(cb.checked) _checkedItems[id] = true;
+      else { delete _checkedItems[id]; }
+      renderItemQuestions(cat);
+    });
+    cb.closest('.chk-item').addEventListener('click', function(e){
+      if(e.target === cb) return;
+      cb.checked = !cb.checked;
+      cb.dispatchEvent(new Event('change'));
+    });
+  });
+
+  updateGqPreview(cat);
+}
+
+function renderItemQuestions(cat){
+  var qSection = document.getElementById('gq-questions');
+  if(!qSection) return;
+  var data = CQ[cat] || CQ.other;
+  var selectedIds = Object.keys(_checkedItems);
+
+  if(!selectedIds.length){
+    qSection.innerHTML = '';
+    updateGqPreview(cat);
+    return;
+  }
+
+  qSection.innerHTML = selectedIds.map(function(id){
+    var item = data.items.find(function(x){ return x.id === id; });
+    if(!item) return '';
+    return '<div class="gq-item-block" style="border:1.5px solid var(--o200);border-radius:var(--rlg);overflow:hidden;background:var(--wh)">'
+      + '<div style="background:var(--o50);padding:8px 14px;font-size:12px;font-weight:800;color:var(--o600);border-bottom:1px solid var(--o100)">'
+      + '&#x2728; '+item.label
+      + '</div>'
+      + '<div style="padding:10px 12px;display:flex;flex-direction:column;gap:8px">'
+      + item.qs.map(function(q, qi){
+          var key = id+'_'+qi;
+          var saved = _itemAnswers[key] || '';
+          return '<div class="gq-item">'
+            + '<div class="gq-qlabel">'+q+'</div>'
+            + '<input class="gq-input gq-ans" data-ans-key="'+key+'" value="'+saved+'" placeholder="간단히 입력해 주세요"/>'
+            + '</div>';
+        }).join('')
+      + '</div></div>';
+  }).join('');
+
+  // Wire answer inputs
+  qSection.querySelectorAll('.gq-ans').forEach(function(inp){
+    inp.addEventListener('input', function(){
+      var key = inp.getAttribute('data-ans-key');
+      _itemAnswers[key] = inp.value.trim();
+      inp.closest('.gq-item').classList.toggle('filled', inp.value.trim().length > 0);
       updateGqPreview(cat);
     });
   });
+
   updateGqPreview(cat);
 }
+
 function updateGqPreview(cat){
-  var qs=GQ[cat]||GQ.other;
-  var preview=document.getElementById('gq-preview');
-  if(!preview)return;
-  var lines=qs.filter(function(q){return _gqVals[q.key]&&_gqVals[q.key].length>0;})
-    .map(function(q){return q.q.replace('?','').replace('나요','') + ': ' + _gqVals[q.key];});
-  if(!lines.length){
-    preview.innerHTML='<div class="gq-preview-empty">위 질문에 답변하면 여기에 자동으로 정리됩니다.</div>';
+  var preview = document.getElementById('gq-preview');
+  if(!preview) return;
+  var data = CQ[cat] || CQ.other;
+  var selectedIds = Object.keys(_checkedItems);
+  if(!selectedIds.length){
+    preview.innerHTML = '<div class="gq-preview-empty">위에서 해당 항목을 선택하면 여기에 자동으로 정리됩니다.</div>';
     return;
   }
-  preview.innerHTML='<div class="gq-preview-text">'+lines.join('<br>')+'</div>';
+  var lines = [];
+  selectedIds.forEach(function(id){
+    var item = data.items.find(function(x){ return x.id === id; });
+    if(!item) return;
+    lines.push('<strong style="color:var(--o500)">[ '+item.label+' ]</strong>');
+    item.qs.forEach(function(q, qi){
+      var ans = _itemAnswers[id+'_'+qi];
+      if(ans){
+        // 질문 원문 그대로 (단 '?' 제거)
+        var short = q.replace('?','').trim();
+        lines.push(short + ': ' + ans);
+      }
+    });
+  });
+  var extra = document.getElementById('cc-content');
+  if(extra && extra.value.trim()) lines.push('추가: '+extra.value.trim());
+  preview.innerHTML = '<div class="gq-preview-text">'+lines.join('<br>')+'</div>';
 }
+
 function getGqComposedContent(cat){
-  var qs=GQ[cat]||GQ.other;
-  var lines=qs.filter(function(q){return _gqVals[q.key]&&_gqVals[q.key].length>0;})
-    .map(function(q){return q.q.replace('?','').replace('나요','') + ': ' + _gqVals[q.key];});
-  var extra=document.getElementById('cc-content')?document.getElementById('cc-content').value.trim():'';
-  if(extra) lines.push('추가 내용: '+extra);
-  return lines.join('\n');
+  var data = CQ[cat] || CQ.other;
+  var selectedIds = Object.keys(_checkedItems);
+  var lines = [];
+  selectedIds.forEach(function(id){
+    var item = data.items.find(function(x){ return x.id === id; });
+    if(!item) return;
+    lines.push('['+item.label+']');
+    item.qs.forEach(function(q, qi){
+      var ans = _itemAnswers[id+'_'+qi];
+      if(ans){
+        var short = q.replace('?','').trim();
+        lines.push(short + ': ' + ans);
+      }
+    });
+    lines.push('');
+  });
+  var extra = document.getElementById('cc-content');
+  if(extra && extra.value.trim()) lines.push('추가 내용: '+extra.value.trim());
+  return lines.join('\n').trim();
 }
+
 function hasGqAnswers(){
-  return Object.keys(_gqVals).some(function(k){return _gqVals[k]&&_gqVals[k].length>0;});
+  return Object.keys(_checkedItems).length > 0;
 }
 
 function renderChecklist(cat){
@@ -955,34 +1105,24 @@ function renderChecklist(cat){
 }
 function renderFaq(){
   var q=($('faq-search')?$('faq-search').value:'').trim().toLowerCase();
-  var items=FAQ_DATA.filter(function(f){return !q||f.kw.indexOf(q)>=0||f.text.indexOf(q)>=0;});
+  var items=FAQ_DATA.filter(function(f){return !q||f.kw.indexOf(q)>=0||f.text.indexOf(q)>=0||f.cat.indexOf(q)>=0;});
   var el=$('faq-list');
+  if(!el)return;
   if(!items.length){el.innerHTML='<div style="padding:24px;text-align:center;color:var(--t3);font-size:14px">검색 결과가 없습니다</div>';return;}
   el.innerHTML=items.map(function(f){
-    return '<div class="faq-card"><div class="faq-head" data-faq="'+f.id+'"><span style="font-weight:700;font-size:14px">'+f.cat+'</span><span style="font-size:18px;color:var(--t3);transition:transform .2s" id="farr-'+f.id+'">&#x25B6;</span></div><div class="faq-body" id="fb-'+f.id+'"><p class="faq-text">'+f.text.replace(/</g,'&lt;')+'</p><button class="faq-voice" data-speak="'+f.id+'">&#x1F508; 음성으로 듣기</button></div></div>';
+    return '<div class="faq-card">'
+      +'<div class="faq-head" data-faq="'+f.id+'">'
+      +'<span style="font-weight:700;font-size:14px">'+f.cat+'</span>'
+      +'<span style="font-size:18px;color:var(--t3);transition:transform .2s" id="farr-'+f.id+'">&#x25B6;</span>'
+      +'</div>'
+      +'<div class="faq-body" id="fb-'+f.id+'">'
+      +'<p class="faq-text">'+f.text.replace(/</g,'&lt;')+'</p>'
+      +'<button class="faq-voice btn bs btn-sm" style="margin-top:10px" data-speak="'+f.id+'">&#x1F508; 음성으로 듣기</button>'
+      +'</div>'
+      +'</div>';
   }).join('');
-  el.querySelectorAll('.faq-head').forEach(function(h){
-    h.addEventListener('click',function(){
-      var id=h.dataset.faq;
-      var body=$('fb-'+id),arr=$('farr-'+id);
-      var open=body.classList.contains('open');
-      document.querySelectorAll('.faq-body').forEach(function(b){b.classList.remove('open');});
-      document.querySelectorAll('[id^="farr-"]').forEach(function(a){a.style.transform='';});
-      if(!open){body.classList.add('open');if(arr)arr.style.transform='rotate(90deg)';}
-    });
-  });
-  el.querySelectorAll('.faq-voice').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var f=FAQ_DATA.find(function(x){return x.id===btn.dataset.speak;});
-      if(!f)return;
-      if(!window.speechSynthesis){toast('이 브라우저는 음성을 지원하지 않습니다.');return;}
-      window.speechSynthesis.cancel();
-      var u=new SpeechSynthesisUtterance(f.text.replace(/\[.*?\]/g,'').replace(/•/g,''));
-      u.lang='ko-KR';u.rate=0.9;window.speechSynthesis.speak(u);
-      toast('음성 안내를 시작합니다.');
-    });
-  });
 }
+
 function submitCounsel(){
   var content=$('cc-content').value.trim();
   var errEl=$('cc-err');errEl.classList.add('hidden');
@@ -1247,6 +1387,88 @@ function renderPHist(){
   });
 }
 
+/* ── 교사 질문 편집 ── */
+function renderTeacherQuestionEditor(cat){
+  var el=$('tq-editor');if(!el)return;
+  var data=CQ[cat]||CQ.other;
+  el.innerHTML=data.items.map(function(item,ii){
+    return '<div class="faq-edit-row" id="tqrow-'+ii+'" style="margin-bottom:8px">'
+      +'<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">'
+      +'<input class="inp tq-item-label" data-ii="'+ii+'" value="'+item.label.replace(/"/g,'&quot;')+'" style="font-size:13px;font-weight:600;flex:1;margin-right:8px"/>'
+      +'<button class="btn b-red btn-sm" style="font-size:11px;padding:5px 9px;flex-shrink:0" data-tq-del-item="'+ii+'">&#x1F5D1;</button>'
+      +'</div>'
+      +'<div style="display:flex;flex-direction:column;gap:5px" id="tq-qs-'+ii+'">'
+      +item.qs.map(function(q,qi){
+        return '<div style="display:flex;gap:5px">'
+          +'<input class="inp tq-q-inp" data-ii="'+ii+'" data-qi="'+qi+'" value="'+q.replace(/"/g,'&quot;')+'" style="font-size:12px;flex:1"/>'
+          +'<button class="btn bg btn-sm" style="font-size:11px;padding:5px 8px;flex-shrink:0" data-tq-del-q="'+ii+'-'+qi+'">&#x2715;</button>'
+          +'</div>';
+      }).join('')
+      +'</div>'
+      +'<button class="btn bs btn-sm" style="margin-top:6px;font-size:11px" data-tq-add-q="'+ii+'">+ 질문 추가</button>'
+      +'</div>';
+  }).join('');
+  // Wire delete item
+  el.querySelectorAll('[data-tq-del-item]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var ii=parseInt(btn.getAttribute('data-tq-del-item'));
+      var cat=getActiveTQCat();
+      if(CQ[cat]&&CQ[cat].items.length>1){CQ[cat].items.splice(ii,1);renderTeacherQuestionEditor(cat);}
+      else toast('항목이 하나뿐이라 삭제할 수 없습니다.');
+    });
+  });
+  // Wire delete question
+  el.querySelectorAll('[data-tq-del-q]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var parts=btn.getAttribute('data-tq-del-q').split('-');
+      var ii=parseInt(parts[0]),qi=parseInt(parts[1]);
+      var cat=getActiveTQCat();
+      if(CQ[cat]&&CQ[cat].items[ii]&&CQ[cat].items[ii].qs.length>1){
+        CQ[cat].items[ii].qs.splice(qi,1);renderTeacherQuestionEditor(cat);
+      } else toast('질문이 하나뿐이라 삭제할 수 없습니다.');
+    });
+  });
+  // Wire add question
+  el.querySelectorAll('[data-tq-add-q]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var ii=parseInt(btn.getAttribute('data-tq-add-q'));
+      var cat=getActiveTQCat();
+      if(CQ[cat]&&CQ[cat].items[ii]){
+        CQ[cat].items[ii].qs.push('새 질문을 입력하세요');
+        renderTeacherQuestionEditor(cat);
+      }
+    });
+  });
+}
+function getActiveTQCat(){
+  var el=document.querySelector('[data-tq-cat].on');
+  return el?el.getAttribute('data-tq-cat'):'safety';
+}
+function saveTeacherQuestions(){
+  var cat=getActiveTQCat();
+  var data=CQ[cat]||CQ.other;
+  // Save labels
+  document.querySelectorAll('.tq-item-label').forEach(function(inp){
+    var ii=parseInt(inp.getAttribute('data-ii'));
+    if(data.items[ii]) data.items[ii].label=inp.value.trim();
+  });
+  // Save questions
+  document.querySelectorAll('.tq-q-inp').forEach(function(inp){
+    var ii=parseInt(inp.getAttribute('data-ii'));
+    var qi=parseInt(inp.getAttribute('data-qi'));
+    if(data.items[ii]&&data.items[ii].qs[qi]!==undefined) data.items[ii].qs[qi]=inp.value.trim();
+  });
+  toast('질문이 저장되었습니다. 학부모 상담 화면에 즉시 반영됩니다.');
+}
+function addTeacherQuestionItem(){
+  var cat=getActiveTQCat();
+  if(!CQ[cat]) return;
+  var newId='custom-'+Date.now();
+  CQ[cat].items.push({id:newId,label:'새 항목 (편집하세요)',qs:['새 질문을 입력하세요']});
+  renderTeacherQuestionEditor(cat);
+  toast('새 항목이 추가되었습니다.');
+}
+
 /* ── TEACHER ── */
 function initTeacher(){
   $('tn-name').textContent=S.profile.name+' · '+S.profile.className;
@@ -1486,40 +1708,233 @@ function genAiDraft(){
 }
 
 /* ── INIT (DOM ready) ── */
+/* ── SINGLE EVENT DELEGATION ── */
 (function initApp(){
-  /* MODAL EVENTS */
-  var ma=$('m-answer');
-  if(ma)ma.addEventListener('click',function(e){if(e.target===ma)closeModal();});
-  on('modal-cancel','click',closeModal);
-  on('modal-save','click',saveAnswer);
-  on('tmpl-btn','click',function(){var p=$('tmpl-panel');if(p){p.classList.toggle('hidden');if(!p.classList.contains('hidden'))renderTemplates();}});
-  on('ai-btn','click',genAiDraft);
-  on('tmpl-add-btn','click',function(){var inp=$('tmpl-new');if(!inp||!inp.value.trim())return;TEMPLATES.push(inp.value.trim());inp.value='';renderTemplates();toast('템플릿이 추가되었습니다.');});
-  document.querySelectorAll('#m-status .pill').forEach(function(b){b.addEventListener('click',function(){selPillIn('m-status',b.dataset.v);});});
+  /* All clicks routed through document */
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    /* Walk up to find actionable element */
+    var el = t;
+    for(var i=0;i<5;i++){
+      if(!el||!el.getAttribute)break;
+      var act = el.getAttribute('data-action');
+      var role = el.getAttribute('data-role');
+      var demo = el.getAttribute('data-demo');
+      var tabT = el.getAttribute('data-t');
+      var tabTV = el.getAttribute('data-tv');
+      var tabAT = el.getAttribute('data-at');
+      var tabAST = el.getAttribute('data-ast');
+      var tabCT = el.getAttribute('data-ct');
+      var pillV = el.getAttribute('data-v');
+      var pillGid = el.getAttribute('data-gid');
+      var confirm2 = el.getAttribute('data-confirm');
+      var ansId = el.getAttribute('data-ans');
+      var absR = el.getAttribute('data-ar');
+      var aiChip = el.getAttribute('data-chip-idx');
+      var faqH = el.getAttribute('data-faq');
+      var faqSpeak = el.getAttribute('data-speak');
+      var tmplIdx = el.getAttribute('data-tmpl');
+      var faqDel = el.getAttribute('data-faq-del');
 
-  /* LANDING EVENTS */
-  on('logo','click',function(){logout();});
-  on('go-register','click',function(){setAuthMode('register');show('auth');});
-  on('go-login','click',function(){setAuthMode('login');show('auth');});
-  on('demo-parent','click',function(){enterDemo('parent');});
-  on('demo-teacher','click',function(){enterDemo('teacher');});
-  on('demo-admin','click',function(){enterDemo('admin');});
+      if(act){
+        e.stopPropagation();
+        switch(act){
+          case 'go-landing': logout(); break;
+          case 'go-register': setAuthMode('register'); show('auth'); break;
+          case 'go-login': setAuthMode('login'); show('auth'); break;
+          case 'auth-submit': authSubmit(); break;
+          case 'sw-login': setAuthMode('login'); break;
+          case 'sw-register': setAuthMode('register'); break;
+          case 'profile-submit': profileSubmit(); break;
+          case 'logout': logout(); break;
+          case 'counsel-submit': submitCounsel(); break;
+          case 'abs-next': absNext(); break;
+          case 'abs-prev': absPrev(); break;
+          case 'abs-submit': submitAbsence(); break;
+          case 'toggle-settings': var ts=$('t-settings');if(ts)ts.classList.toggle('hidden'); break;
+          case 'save-settings': toast('설정이 저장되었습니다.'); break;
+          case 'faq-save': saveFaqEdits(); break;
+          case 'faq-add': addFaqCategory(); break;
+          case 'modal-save': saveAnswer(); break;
+          case 'modal-cancel': closeModal(); break;
+          case 'close-modal': closeModal(); break;
+          case 'tmpl-toggle': var tp=$('tmpl-panel');if(tp){tp.classList.toggle('hidden');if(!tp.classList.contains('hidden'))renderTemplates();} break;
+          case 'ai-draft': genAiDraft(); break;
+          case 'tmpl-add': var ni=$('tmpl-new');if(ni&&ni.value.trim()){TEMPLATES.push(ni.value.trim());ni.value='';renderTemplates();toast('템플릿이 추가되었습니다.');} break;
+          case 'go-ars': ptabByKey('ph-ars'); break;
+          case 'go-absence': ptabByKey('ph-absence'); break;
+          case 'go-counsel': ptabByKey('ph-counsel'); break;
+          case 'mc-cancel': closeConfirmModal(); break;
+          case 'mc-send': sendConfirmed(); break;
+          case 'tq-save': saveTeacherQuestions(); break;
+          case 'tq-add-item': addTeacherQuestionItem(); break;
+        }
+        return;
+      }
+      if(demo){ enterDemo(demo); return; }
+      if(role){ setRole(role); return; }
+      if(tabT){ ptabByKey(tabT); return; }
+      /* 설정 내부 탭 */
+      var tsTab = el.getAttribute('data-ts');
+      if(tsTab){
+        document.querySelectorAll('#ts-tabs .tab').forEach(function(b){b.classList.remove('on');});
+        el.classList.add('on');
+        var tsNotify=$('ts-notify'), tsQ=$('ts-questions');
+        if(tsNotify) tsNotify.classList.toggle('hidden', tsTab!=='ts-notify');
+        if(tsQ) tsQ.classList.toggle('hidden', tsTab!=='ts-questions');
+        if(tsTab==='ts-questions') renderTeacherQuestionEditor('safety');
+        return;
+      }
+      /* 교사 질문 편집 카테고리 탭 */
+      var tqCat = el.getAttribute('data-tq-cat');
+      if(tqCat){
+        document.querySelectorAll('[data-tq-cat]').forEach(function(b){b.classList.remove('on');});
+        el.classList.add('on');
+        renderTeacherQuestionEditor(tqCat);
+        return;
+      }
+      if(tabTV){
+        document.querySelectorAll('#ttabs .tab').forEach(function(b){b.classList.remove('on');});
+        el.classList.add('on'); S.tTab=tabTV; renderT(); return;
+      }
+      if(tabAT){
+        document.querySelectorAll('#atabs .tab').forEach(function(b){b.classList.remove('on');});
+        el.classList.add('on');
+        var areqs=$('a-reqs'),afaq=$('a-faq');
+        if(areqs)areqs.classList.toggle('hidden',tabAT!=='a-reqs');
+        if(afaq)afaq.classList.toggle('hidden',tabAT!=='a-faq');
+        return;
+      }
+      if(tabAST){
+        document.querySelectorAll('#a-status-tabs .tab').forEach(function(b){b.classList.remove('on');});
+        el.classList.add('on'); S.aStatusTab=tabAST; renderA(); return;
+      }
+      if(tabCT){
+        document.querySelectorAll('#chart-tabs .tab').forEach(function(b){b.classList.remove('on');});
+        el.classList.add('on');
+        ['chart-overview','chart-monthly','chart-classes'].forEach(function(id){
+          var ce=document.getElementById(id);if(ce)ce.classList.toggle('hidden',id!==tabCT);
+        });
+        if(tabCT==='chart-monthly')renderMonthly();
+        if(tabCT==='chart-classes')renderClassBoard();
+        return;
+      }
+      if(pillV && pillGid){
+        document.querySelectorAll('#'+pillGid+' .pill').forEach(function(b){b.classList.remove('on');});
+        el.classList.add('on');
+        if(pillGid==='cc-urg'){
+          var uw=$('urg-warn');
+          if(uw)uw.classList.toggle('hidden',pillV!=='emergency');
+          if(pillV==='emergency'){var ua=$('urg-agree');if(ua)ua.checked=false;}
+          S.urgSel=pillV;
+        }
+        if(pillGid==='cc-cat'){ renderChecklist(pillV); renderGuidedQuestions(pillV); }
+        if(pillGid==='m-status'){ selPillIn('m-status',pillV); }
+        return;
+      }
+      if(confirm2){
+        var rr=S.reqs.find(function(x){return x.id===confirm2;});
+        if(rr){rr.parentConfirmed=true;rr.status='resolved';}
+        toast('답변을 확인했습니다. 상담이 완료 처리됩니다.');renderPHist();
+        return;
+      }
+      if(ansId){ openModal(ansId); return; }
+      if(absR){
+        S_ABS.reason=absR;
+        document.querySelectorAll('[data-ar]').forEach(function(b){b.style.borderColor='var(--bd)';b.style.background='var(--wh)';});
+        el.style.borderColor='var(--o400)';el.style.background='var(--o50)';
+        return;
+      }
+      if(aiChip){
+        var ta=$('cc-content');
+        var sugs=window._currentSugs||[];
+        var sug=sugs[parseInt(aiChip)];
+        if(ta&&sug){
+          var cur=ta.value.trimEnd();
+          if(cur&&!cur.endsWith('다')&&!cur.endsWith('요')&&!cur.endsWith('.'))cur+='. ';
+          else cur+=' ';
+          ta.value=cur+sug;
+          updateGqPreview(getActivePill('cc-cat'));
+          ta.focus();
+          triggerAiGuide(ta.value,getActivePill('cc-cat'));
+        }
+        return;
+      }
+      if(faqH){
+        var fb=document.getElementById('fb-'+faqH);
+        var fa=document.getElementById('farr-'+faqH);
+        if(!fb)break;
+        var wasOpen=fb.classList.contains('open');
+        document.querySelectorAll('.faq-body').forEach(function(b){b.classList.remove('open');});
+        document.querySelectorAll('[id^="farr-"]').forEach(function(a){a.style.transform='';});
+        if(!wasOpen){fb.classList.add('open');if(fa)fa.style.transform='rotate(90deg)';}
+        return;
+      }
+      if(faqSpeak){
+        var ff=FAQ_DATA.find(function(x){return x.id===faqSpeak;});
+        if(ff&&window.speechSynthesis){
+          window.speechSynthesis.cancel();
+          var u=new SpeechSynthesisUtterance(ff.text.replace(/\[.*?\]/g,'').replace(/•/g,''));
+          u.lang='ko-KR';u.rate=0.9;window.speechSynthesis.speak(u);
+          toast('음성 안내를 시작합니다.');
+        } else { toast('이 브라우저는 음성을 지원하지 않습니다.'); }
+        return;
+      }
+      if(tmplIdx){
+        var ta2=$('m-resp');if(ta2)ta2.value=TEMPLATES[parseInt(tmplIdx)]||'';
+        var tpanel=$('tmpl-panel');if(tpanel)tpanel.classList.add('hidden');
+        toast('템플릿이 적용되었습니다.');
+        return;
+      }
+      if(faqDel){
+        if(!confirm('이 카테고리를 삭제할까요?'))return;
+        FAQ_DATA.splice(parseInt(faqDel),1);
+        renderFaqEditor();toast('삭제되었습니다.');
+        return;
+      }
+      /* overlay close */
+      if(el.id==='m-answer'){ closeModal(); return; }
+      el=el.parentElement;
+    }
+  });
 
-  /* AUTH EVENTS */
-  on('a-btn','click',authSubmit);
-  on('auth-demo-parent','click',function(){enterDemo('parent');});
-  on('auth-demo-teacher','click',function(){enterDemo('teacher');});
-  on('auth-demo-admin','click',function(){enterDemo('admin');});
-  document.addEventListener('keydown',function(e){if(e.key==='Enter'&&!$('s-auth').classList.contains('hidden'))authSubmit();});
+  /* Input delegation */
+  document.addEventListener('input', function(e){
+    var t=e.target, id=t.id||'';
+    if(id==='t-search')renderT();
+    if(id==='a-search')renderA();
+    if(id==='a-clf')renderA();
+    if(id==='faq-search')renderFaq();
+    if(id==='cc-content') updateGqPreview(getActivePill('cc-cat'));
+    if(t.classList.contains('gq-input')){
+      var key=t.getAttribute('data-key');
+      if(key){ _gqVals[key]=t.value.trim(); t.closest('.gq-item').classList.toggle('filled',t.value.trim().length>0); updateGqPreview(getActivePill('cc-cat')); }
+    }
+    if(t.classList.contains('abs-field')) { /* handled by absNext */ }
+  });
 
-  /* PROFILE EVENTS */
-  on('p-submit','click',profileSubmit);
-  document.querySelectorAll('.rbtn').forEach(function(b){b.addEventListener('click',function(){setRole(b.dataset.role);});});
+  /* Change delegation */
+  document.addEventListener('change', function(e){
+    var t=e.target, id=t.id||'';
+    if(id==='a-clf')renderA();
+    if(t.classList.contains('intent-item-cb')){
+      t.closest('.intent-item').classList.toggle('on',t.checked);
+    }
+    if(t.type==='checkbox'&&t.closest&&t.closest('.intent-item')){
+      t.closest('.intent-item').classList.toggle('on',t.checked);
+    }
+    if(t.type==='checkbox'&&t.closest&&t.closest('.chk-item')){
+      t.closest('.chk-item').classList.toggle('on',t.checked);
+    }
+  });
 
-  /* RENDER */
-  renderTB();setAuthMode('login');
-})();
+  /* Keydown */
+  document.addEventListener('keydown',function(e){
+    var auth=$('s-auth');
+    if(e.key==='Enter'&&auth&&!auth.classList.contains('hidden'))authSubmit();
+  });
+
+  /* Init render */
+  renderTB(); setAuthMode('login');
 })();
 </script>
-</body>
-</html>
